@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="هامووی - مرجع تخصصی فیلم، سریال و بازی. اخبار، نقد و بررسی و جدیدترین تریلرها.">
+    <!-- Improved Theme Color -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f8f8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0b">
+    <title>هامووی | مرجع تخصصی فیلم، سریال و بازی</title>
+    <!-- Assume favicon is in the img folder - Adjusted path based on original code structure -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+    <style>
+        /* ========================= Root Variables ========================= */
+        :root {
+            /* --- Colors --- */
+            /* Core Theme (Dark Mode Default) */
+            --primary-color: #e50914;
+            --primary-color-rgb: 229, 9, 20;
+            --secondary-color: #ff6650; /* Slightly softer secondary */
+            --secondary-color-rgb: 255, 102, 80;
+            --accent-color: #ffd000; /* Slightly richer yellow */
+            --accent-color-rgb: 255, 208, 0;
+
+            /* Backgrounds */
+            --bg-dark-primary: #0b0b0b; /* Slightly darker */
+            --bg-dark-secondary: #141414;
+            --bg-dark-card: #1a1a1a;
+            --bg-dark-footer: #080808; /* Darker footer */
+            --bg-dark-menu-mobile: #101010; /* Slightly different mobile menu bg */
+
+            /* Text */
+            --text-dark-primary: #f5f5f5; /* Slightly off-white */
+            --text-dark-secondary: #b3b3b3; /* Muted */
+            --text-dark-tertiary: #808080; /* More muted */
+
+            /* Borders & Shadows */
+            --border-dark-primary: rgba(255, 255, 255, 0.1);
+            --border-dark-secondary: rgba(255, 255, 255, 0.05);
+            --shadow-dark-sm: 0 2px 5px rgba(0, 0, 0, 0.25); /* Slightly stronger sm */
+            --shadow-dark-md: 0 5px 15px rgba(0, 0, 0, 0.35); /* Slightly stronger md */
+            --shadow-dark-lg: 0 10px 30px rgba(0, 0, 0, 0.45); /* Slightly stronger lg */
+            --shadow-primary-glow: 0 0 18px rgba(var(--primary-color-rgb), 0.35); /* Enhanced glow */
+
+            /* --- Layout & Styling --- */
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px; /* Default */
+            --border-radius-lg: 12px; /* More pronounced large radius */
+            --border-radius-pill: 9999px;
+
+            --header-height-desktop: 70px; /* Adjusted */
+            --header-height-mobile: 60px; /* Adjusted */
+            --header-shrink-height: 55px;
+
+            --container-max-width: 1320px; /* Increased */
+            --container-padding-desktop: 24px;
+            --container-padding-mobile: 16px;
+
+            /* --- Typography --- */
+            --font-primary: 'Vazirmatn', 'Montserrat', sans-serif;
+            --font-logo: 'Bebas Neue', cursive;
+            --font-weight-light: 300;
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --font-weight-black: 900;
+            --line-height-base: 1.65;
+            --line-height-heading: 1.3;
+
+            /* --- Transitions --- */
+            --transition-fast: 0.15s ease-out;
+            --transition-normal: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+
+            /* --- Specific Component Colors --- */
+            --game-color: #4cc9f0;
+            --game-color-rgb: 76, 201, 240; /* Added RGB for badge */
+            --movie-color: #f72585;
+            --tv-color: #7209b7;
+            --review-color: #4361ee;
+        }
+
+        /* ========================= Light Mode Variables ========================= */
+        html:not(.dark-mode) { /* Styles when NOT in dark mode */
+            /* Backgrounds */
+            --bg-light-primary: #f8f8f8;
+            --bg-light-secondary: #ffffff;
+            --bg-light-card: #ffffff;
+            --bg-light-footer: #f0f0f0;
+            --bg-light-menu-mobile: #ffffff;
+
+            /* Text */
+            --text-light-primary: #1f1f1f; /* Slightly darker text */
+            --text-light-secondary: #555555;
+            --text-light-tertiary: #888888;
+
+            /* Borders & Shadows */
+            --border-light-primary: rgba(0, 0, 0, 0.1);
+            --border-light-secondary: rgba(0, 0, 0, 0.05);
+            --shadow-light-sm: 0 2px 4px rgba(0, 0, 0, 0.08); /* Adjusted light shadow */
+            --shadow-light-md: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjusted light shadow */
+            --shadow-light-lg: 0 8px 24px rgba(0, 0, 0, 0.12); /* Adjusted light shadow */
+        }
+
+        /* ========================= Global Styles ========================= */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        html.dark-mode { color-scheme: dark; }
+        html:not(.dark-mode) { color-scheme: light; }
+
+        body {
+            font-family: var(--font-primary);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--line-height-base);
+            background-color: var(--bg-dark-primary);
+            color: var(--text-dark-primary);
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        body.dark-mode { /* Specific dark mode body styles if needed */ }
+        body:not(.dark-mode) {
+            background-color: var(--bg-light-primary);
+            color: var(--text-light-primary);
+        }
+
+        main {
+            flex-grow: 1; /* Ensure footer stays at bottom */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-fast);
+        }
+        a:hover {
+            color: var(--accent-color);
+        }
+        body:not(.dark-mode) a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Accessibility: Enhanced Focus Styles */
+        a:focus-visible,
+        button:focus-visible,
+        input[type="email"]:focus-visible,
+        .swiper-button-next:focus-visible,
+        .swiper-button-prev:focus-visible,
+        .swiper-pagination-bullet:focus-visible,
+        .hamburger-menu:focus-visible { /* Added hamburger */
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+            box-shadow: 0 0 0 5px rgba(var(--accent-color-rgb), 0.3); /* Slightly larger shadow */
+            border-radius: var(--border-radius-sm);
+        }
+        body:not(.dark-mode) a:focus-visible,
+        body:not(.dark-mode) button:focus-visible,
+        body:not(.dark-mode) input[type="email"]:focus-visible,
+        body:not(.dark-mode) .swiper-button-next:focus-visible,
+        body:not(.dark-mode) .swiper-button-prev:focus-visible,
+        body:not(.dark-mode) .swiper-pagination-bullet:focus-visible,
+        body:not(.dark-mode) .hamburger-menu:focus-visible {
+            outline-color: var(--primary-color);
+            box-shadow: 0 0 0 5px rgba(var(--primary-color-rgb), 0.25);
+        }
+        /* Ensure no double outline on buttons with borders */
+        button:focus-visible { outline-offset: 1px; }
+        input[type="email"]:focus-visible { outline: none; /* Rely on box-shadow for input */}
+
+
+        .container {
+            max-width: var(--container-max-width);
+            width: 100%;
+            margin: 0 auto;
+            padding-left: var(--container-padding-desktop);
+            padding-right: var(--container-padding-desktop);
+        }
+        @media (max-width: 768px) {
+            .container {
+                 padding-left: var(--container-padding-mobile);
+                 padding-right: var(--container-padding-mobile);
+            }
+        }
+
+        img, svg {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          vertical-align: middle;
+        }
+        /* Lazy loading placeholder background */
+        img[loading="lazy"] {
+            background-color: rgba(128, 128, 128, 0.1); /* Light gray placeholder */
+            min-height: 50px; /* Give placeholder some height */
+        }
+
+        section {
+            padding-top: clamp(3.5rem, 7vw, 5.5rem); /* Slightly increased responsive padding */
+            padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 1.5rem; /* Increased margin */
+            line-height: var(--line-height-heading);
+            color: inherit;
+        }
+        h1 { font-size: clamp(2.3rem, 5.5vw, 3.4rem); font-weight: var(--font-weight-black); }
+        h2 { font-size: clamp(1.8rem, 4.5vw, 2.4rem); }
+        h3 { font-size: clamp(1.4rem, 3.8vw, 1.7rem); }
+        h4 { font-size: 1.15rem; }
+
+        p {
+            margin-bottom: 1.5rem; /* Increased margin */
+            max-width: 68ch;
+            color: var(--text-dark-secondary);
+        }
+        body:not(.dark-mode) p {
+             color: var(--text-light-secondary);
+        }
+        /* Specific container for centered text */
+        .text-container {
+             max-width: 850px;
+             margin-left: auto;
+             margin-right: auto;
+         }
+         .text-center { text-align: center; }
+         .text-center p, .text-center h1, .text-center h2, .text-center h3 {
+             margin-left: auto;
+             margin-right: auto;
+         }
+
+        /* ========================= Header Styles (Optimized) ========================= */
+        .site-header {
+            background-color: rgba(11, 11, 11, 0.88); /* Slightly less transparent */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px); /* Slightly more blur */
+            box-shadow: var(--shadow-dark-sm);
+            height: var(--header-height-desktop);
+            transition: height var(--transition-normal), background-color var(--transition-normal), box-shadow var(--transition-normal);
+            border-bottom: 1px solid var(--border-dark-secondary);
+        }
+        .site-header.shrink {
+            height: var(--header-shrink-height);
+            background-color: rgba(11, 11, 11, 0.96); /* Darker on shrink */
+            box-shadow: var(--shadow-dark-md); /* More shadow when shrunk */
+        }
+        body:not(.dark-mode) .site-header {
+            background-color: rgba(248, 248, 248, 0.88);
+            box-shadow: var(--shadow-light-sm);
+            border-bottom-color: var(--border-light-secondary);
+        }
+        body:not(.dark-mode) .site-header.shrink {
+            background-color: rgba(248, 248, 248, 0.96);
+            box-shadow: var(--shadow-light-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Logo */
+        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
+        .logo {
+            width: auto; /* Allow height to control size */
+            height: clamp(35px, 5vh, 45px); /* Adjusted logo size based on header height */
+            transition: transform var(--transition-fast);
+            /* Keep user-provided path */
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        /* Site Title (Optional - uncomment if logo is not enough) */
+        /* .site-title {
+            color: var(--text-dark-primary);
+            font-family: var(--font-logo);
+            font-size: clamp(1.6rem, 4vw, 1.9rem);
+            letter-spacing: 1.5px;
+            transition: color var(--transition-fast);
+            font-weight: var(--font-weight-regular);
+            margin: 0;
+            opacity: 0.95;
+        }
+        body:not(.dark-mode) .site-title { color: var(--text-light-primary); }
+        .site-title:hover { color: var(--accent-color); opacity: 1; }
+        body:not(.dark-mode) .site-title:hover { color: var(--primary-color); } */
+
+        /* Desktop Navigation */
+        .main-navigation { display: none; }
+        @media (min-width: 992px) {
+            .main-navigation { display: flex; align-items: center; }
+            .main-navigation ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; } /* Increased gap */
+            .main-navigation li a {
+                display: block;
+                font-weight: var(--font-weight-medium);
+                font-size: 0.95rem;
+                padding: 0.6rem 1.1rem; /* Adjusted padding */
+                border-radius: var(--border-radius-sm);
+                transition: background-color var(--transition-fast), color var(--transition-fast);
+                position: relative;
+                overflow: hidden;
+                color: var(--text-dark-secondary);
+            }
+            body:not(.dark-mode) .main-navigation li a { color: var(--text-light-secondary); }
+            .main-navigation li a:hover,
+            .main-navigation li a.active {
+                color: var(--text-dark-primary);
+                background-color: rgba(255, 255, 255, 0.08); /* Slightly more visible bg */
+            }
+            body:not(.dark-mode) .main-navigation li a:hover,
+            body:not(.dark-mode) .main-navigation li a.active {
+                color: var(--text-light-primary);
+                background-color: rgba(0, 0, 0, 0.05); /* Slightly more visible bg */
+            }
+            /* Underline effect */
+            .main-navigation li a::after {
+                content: ''; position: absolute;
+                bottom: 5px; right: 1.1rem; left: 1.1rem; height: 2.5px; /* Slightly thicker */
+                background-color: var(--accent-color);
+                transform: scaleX(0);
+                transition: transform var(--transition-normal);
+                transform-origin: center;
+                border-radius: 1px; /* Soften edges */
+            }
+            body:not(.dark-mode) .main-navigation li a::after { background-color: var(--primary-color); }
+            .main-navigation li a:hover::after,
+            .main-navigation li a.active::after { transform: scaleX(1); }
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: flex; flex-direction: column; justify-content: center; /* Center lines */
+            cursor: pointer; gap: 5px;
+            padding: 0.8rem; /* Slightly larger touch area */
+            background: transparent; border: none;
+            margin-left: 0.5rem; z-index: 1002; width: 40px; height: 40px; /* Explicit size */
+            border-radius: var(--border-radius-sm); /* Add radius for focus style */
+        }
+        @media (min-width: 992px) { .hamburger-menu { display: none; } }
+        .hamburger-menu div {
+            width: 24px; height: 2.5px; background-color: var(--text-dark-primary);
+            transition: all 0.35s cubic-bezier(0.68, -0.6, 0.32, 1.6); /* Bouncier transition */
+            border-radius: 2px; transform-origin: center; margin: 0 auto; /* Center lines */
+        }
+        body:not(.dark-mode) .hamburger-menu div { background-color: var(--text-light-primary); }
+        /* Hamburger active state */
+        .hamburger-menu.active .hamburger-line-top { transform: rotate(-45deg) translate(-5px, 6px); }
+        .hamburger-menu.active .hamburger-line-middle { opacity: 0; transform: scale(0); }
+        .hamburger-menu.active .hamburger-line-bottom { transform: rotate(45deg) translate(-5px, -6px); }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: block; position: fixed; top: 0; right: 0; bottom: 0;
+            width: min(320px, 90vw); /* Slightly wider */
+            background-color: var(--bg-dark-menu-mobile); /* Use dedicated variable */
+            box-shadow: -8px 0 25px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            z-index: 1001;
+            padding: calc(var(--header-height-mobile) + 2rem) 0 2rem 0; /* Increased top padding */
+            transform: translateX(100%);
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother ease-out */
+            overflow-y: auto; border-left: 1px solid var(--border-dark-secondary);
+            -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+        }
+        body:not(.dark-mode) .mobile-menu {
+            background-color: var(--bg-light-menu-mobile);
+            box-shadow: -6px 0 20px rgba(0, 0, 0, 0.12);
+            border-left-color: var(--border-light-secondary);
+        }
+        .mobile-menu.active { transform: translateX(0); }
+        .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
+        .mobile-menu a {
+            display: block; padding: 1.1rem 2rem; /* Increased padding */
+            text-align: right;
+            border-bottom: 1px solid var(--border-dark-secondary);
+            font-size: 1.05rem; /* Slightly larger font */
+            font-weight: var(--font-weight-medium);
+            transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), padding-right var(--transition-fast);
+            color: var(--text-dark-secondary); /* Muted color */
+        }
+        body:not(.dark-mode) .mobile-menu a {
+            border-bottom-color: var(--border-light-secondary);
+            color: var(--text-light-secondary);
+        }
+        .mobile-menu li:last-child a { border-bottom: none; }
+        .mobile-menu a:hover, .mobile-menu a.active {
+            background-color: rgba(var(--primary-color-rgb), 0.12); /* Slightly stronger bg */
+            color: var(--primary-color); /* Primary color text */
+            border-right: 4px solid var(--primary-color); /* Thicker active indicator */
+            padding-right: calc(2rem - 4px); /* Adjust padding for border */
+            border-bottom-color: transparent; /* Hide bottom border when active */
+        }
+        body:not(.dark-mode) .mobile-menu a:hover,
+        body:not(.dark-mode) .mobile-menu a.active {
+            background-color: rgba(var(--primary-color-rgb), 0.08);
+        }
+
+        /* Mobile Menu Backdrop */
+        .mobile-menu-backdrop {
+            position: fixed; inset: 0;
+            background-color: rgba(0, 0, 0, 0.65); /* Darker backdrop */
+            z-index: 1000;
+            opacity: 0; visibility: hidden;
+            transition: opacity var(--transition-normal), visibility 0s var(--transition-normal);
+            backdrop-filter: blur(5px); /* Increased blur */
+        }
+        .mobile-menu-backdrop.active {
+            opacity: 1; visibility: visible;
+            transition: opacity var(--transition-normal), visibility 0s;
+        }
+
+        /* ========================= Preloader ========================= */
+        .preloader {
+            position: fixed; inset: 0; z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            background: var(--bg-dark-primary); /* Match body background */
+            transition: opacity 0.7s ease-in-out, visibility 0s 0.7s; /* Slightly slower fade */
+            opacity: 1; visibility: visible;
+        }
+        body:not(.dark-mode) .preloader { background: var(--bg-light-primary); }
+        .preloader.fade-out { opacity: 0; visibility: hidden; }
+        /* Spinner - kept simple */
+        .spinner {
+            width: 55px; height: 55px; /* Slightly larger */
+            border: 5px solid rgba(var(--primary-color-rgb), 0.3);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1.1s linear infinite; /* Slightly slower spin */
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+
+        /* ========================= Hero Section ========================= */
+        .hero-section {
+            position: relative;
+            min-height: 95vh;
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            padding-top: calc(var(--header-height-desktop) + 2rem); /* Extra padding */
+            padding-bottom: 7rem; /* Extra padding */
+            color: #ffffff;
+        }
+        .hero-gradient-overlay {
+            position: absolute; inset: 0;
+            /* Enhanced gradient for smoother blend to background */
+             background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(11, 11, 11, 0.6) 40%, rgba(11, 11, 11, 0.9) 70%, var(--bg-dark-primary) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            max-width: 60%; /* Narrower for more focus */
+            animation: fadeInUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; /* Smoother ease */
+            opacity: 0; transform: translateY(50px);
+        }
+        .hero-title {
+            font-weight: var(--font-weight-black);
+            margin-bottom: 1.75rem; line-height: 1.25;
+            color: #fff;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+        }
+        .hero-subtitle {
+            font-weight: var(--font-weight-light);
+            margin-bottom: 3rem; opacity: 0.95; /* Slightly more opaque */
+            max-width: 600px; color: #e5e5e5; /* Slightly brighter */
+            font-size: clamp(1.05rem, 2.6vw, 1.2rem); /* Slightly larger */
+        }
+        .hero-button {
+            display: inline-flex; align-items: center; gap: 0.7rem; /* Increased gap */
+            font-weight: var(--font-weight-bold); font-size: 1.05rem; /* Slightly larger */
+            padding: 1rem 2.4rem; /* Increased padding */
+            border-radius: var(--border-radius-pill);
+            color: #fff; /* Explicit white text */
+            background: linear-gradient(95deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Slightly adjusted angle */
+            transition: all var(--transition-normal);
+            box-shadow: 0 6px 18px rgba(var(--primary-color-rgb), 0.35); /* Stronger shadow */
+            border: none; cursor: pointer;
+        }
+        .hero-button:hover {
+            transform: translateY(-5px) scale(1.03); /* More lift */
+            box-shadow: 0 9px 25px rgba(var(--secondary-color-rgb), 0.45); /* Stronger hover shadow */
+            color: #fff;
+        }
+        .hero-button i { transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+        .hero-button:hover i { animation: bounceArrow 0.75s ease-out infinite; }
+
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounceArrow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } } /* Increased bounce */
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 88vh; background-attachment: scroll;
+                padding-top: calc(var(--header-height-mobile) + 3rem);
+                padding-bottom: 5rem; text-align: center;
+            }
+            .hero-content { max-width: 95%; margin-left: auto; margin-right: auto; }
+            .hero-subtitle { max-width: 90%; }
+            .hero-button { padding: 0.9rem 2rem; font-size: 1rem; }
+        }
+
+        /* ========================= Marquee Section ========================= */
+        .marquee-section {
+            padding: 1.2rem 0; /* Increased padding */
+            overflow: hidden;
+            background: linear-gradient(90deg, #1f1f1f, #2a2a2a, #1f1f1f); /* Slightly adjusted gradient */
+            color: var(--text-dark-secondary);
+            border-top: 1px solid var(--border-dark-secondary);
+            border-bottom: 1px solid var(--border-dark-secondary);
+        }
+        body:not(.dark-mode) .marquee-section {
+             background: linear-gradient(90deg, #eaeaea, #f7f7f7, #eaeaea);
+             color: var(--text-light-secondary);
+             border-color: var(--border-light-secondary);
+        }
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%); /* Wider mask */
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+            width: 100%; overflow: hidden;
+        }
+        .marquee-content {
+            display: flex; white-space: nowrap;
+            animation: marquee 45s linear infinite; /* Slightly faster */
+            width: max-content; will-change: transform;
+        }
+        .marquee-item {
+            display: inline-flex; align-items: center; padding: 0 3rem; gap: 0.9rem; /* Increased spacing */
+        }
+        .marquee-item span { font-size: 0.95rem; opacity: 0.9; } /* Slightly larger */
+        .marquee-item .label { font-weight: var(--font-weight-bold); opacity: 1; margin-left: 0.5rem; color: var(--text-dark-primary); } /* Bolder label */
+         body:not(.dark-mode) .marquee-item .label { color: var(--text-light-primary); }
+        .marquee-item .separator { opacity: 0.6; font-weight: bold; } /* Bolder separator */
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+
+        /* ========================= Section Heading Helper ========================= */
+        .section-heading {
+            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+            margin-bottom: 3.5rem; /* Increased spacing */
+            gap: 1.5rem; /* Increased gap */
+            border-bottom: 1px solid var(--border-dark-secondary);
+            padding-bottom: 1.5rem; /* Increased padding */
+        }
+         body:not(.dark-mode) .section-heading {
+             border-bottom-color: var(--border-light-secondary);
+         }
+        .section-title {
+            font-size: clamp(1.7rem, 4.2vw, 2.2rem); /* Adjusted size */
+            font-weight: var(--font-weight-bold);
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0;
+        }
+        /* Removed ::after from section-title */
+         .section-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; /* Increased gap */
+            color: var(--accent-color);
+            transition: color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast); /* Added transform */
+            font-size: 0.95rem; font-weight: var(--font-weight-semibold); /* Semibold */
+            padding: 0.5rem 1rem; /* Adjusted padding */
+            border-radius: var(--border-radius-pill);
+         }
+         .section-link:hover {
+             color: var(--bg-dark-primary); /* Dark text on hover */
+             background-color: var(--accent-color);
+             transform: scale(1.05); /* Scale effect on hover */
+         }
+         body:not(.dark-mode) .section-link {
+            color: var(--primary-color);
+         }
+         body:not(.dark-mode) .section-link:hover {
+             color: #fff; /* White text on hover */
+             background-color: var(--primary-color);
+         }
+         .section-link i { font-size: 0.9em; transition: transform 0.25s ease-out; }
+         .section-link:hover i { transform: translateX(-5px); } /* Increased move */
+
+        /* ========================= Featured News Section (Swiper) ========================= */
+        .featured-section {
+            padding-top: 3.5rem; padding-bottom: 3.5rem; /* Increased padding */
+        }
+        .featured-swiper {
+            overflow: hidden; /* Keep overflow hidden for nav buttons */
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-dark-lg);
+            position: relative; /* Needed for absolute positioned children */
+        }
+        body:not(.dark-mode) .featured-swiper { box-shadow: var(--shadow-light-lg); }
+
+        .featured-swiper .swiper-slide { position: relative; height: clamp(480px, 65vh, 600px); color: #fff; } /* Increased height */
+        .featured-swiper .swiper-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); transition: transform 0.4s ease-out; } /* Slightly darker, added transition */
+        .featured-swiper .swiper-slide-active img { transform: scale(1.03); } /* Subtle scale on active slide */
+        .featured-swiper .slide-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, transparent 85%); } /* Stronger bottom gradient */
+        .featured-swiper .slide-content {
+            position: absolute; bottom: 0; right: 0;
+            padding: clamp(1.8rem, 5vw, 3rem); /* Increased padding */
+            width: 100%; max-width: 78%; z-index: 10; /* Slightly wider */
+            opacity: 0; transform: translateY(30px); /* Increased initial offset */
+            transition: opacity 0.7s ease-out 0.35s, transform 0.7s ease-out 0.35s; /* Slower transition */
+        }
+        .featured-swiper .swiper-slide-active .slide-content { opacity: 1; transform: translateY(0); }
+        .featured-swiper .slide-title {
+             font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: var(--font-weight-bold); /* Larger title */
+             margin-bottom: 1rem; line-height: 1.35; text-shadow: 0 2px 8px rgba(0,0,0,0.8); /* Stronger shadow */
+        }
+        .featured-swiper .slide-description {
+            font-size: clamp(0.95rem, 2.6vw, 1.05rem); opacity: 0.9; /* Slightly larger */
+            margin-bottom: 1.8rem; line-height: 1.65; /* Increased spacing/line height */
+            max-width: 58ch; /* Limit width */
+         }
+        .featured-swiper .slide-meta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        .featured-swiper .meta-info { opacity: 0.85; } /* Slightly more visible */
+        .featured-swiper .meta-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; /* Increased gap */
+            color: var(--accent-color); font-weight: var(--font-weight-semibold);
+            transition: color var(--transition-fast), transform var(--transition-fast);
+            padding: 0.4rem 0; /* Increased click area */
+        }
+        .featured-swiper .meta-link:hover { color: var(--secondary-color); transform: translateX(-5px); } /* Increased move */
+        .featured-swiper .meta-link i { font-size: 0.9em; }
+        /* Swiper Controls */
+        .featured-swiper .swiper-pagination { bottom: 15px !important; } /* Ensure visibility */
+        .featured-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.6); opacity: 1;
+            transition: opacity var(--transition-fast), background-color var(--transition-fast), transform var(--transition-normal); /* Slower transform */
+            width: 11px; height: 11px; margin: 0 6px !important; /* Slightly larger bullets/spacing */
+         }
+        .featured-swiper .swiper-pagination-bullet-active {
+             background: var(--accent-color); transform: scale(1.3); /* Larger active scale */
+        }
+        .featured-swiper .swiper-button-next,
+        .featured-swiper .swiper-button-prev {
+            color: white; background: rgba(var(--bg-dark-primary-rgb, 11, 11, 11), 0.5); /* Slightly more visible */
+            width: 50px; height: 50px; border-radius: 50%; /* Larger buttons */
+            backdrop-filter: blur(6px); transition: all var(--transition-normal);
+            opacity: 0.85; top: 50%; transform: translateY(-50%);
+            display: flex; /* Ensure icon centering */
+            align-items: center; justify-content: center;
+        }
+        .featured-swiper .swiper-button-next:hover,
+        .featured-swiper .swiper-button-prev:hover {
+             background: rgba(var(--primary-color-rgb), 0.8); /* Stronger hover bg */
+             transform: translateY(-50%) scale(1.1); /* Slightly larger hover scale */
+             opacity: 1;
+        }
+        .featured-swiper .swiper-button-next::after,
+        .featured-swiper .swiper-button-prev::after { font-size: 1.3rem; font-weight: bold; } /* Larger icons */
+
+        @media (max-width: 768px) {
+            .featured-swiper .slide-content { max-width: 95%; padding: 1.8rem; }
+            .featured-swiper .slide-description { display: none; }
+            .featured-swiper .swiper-button-next,
+            .featured-swiper .swiper-button-prev { display: none; } /* Hide buttons on mobile */
+            .featured-swiper { border-radius: var(--border-radius-md); }
+            .featured-swiper .swiper-pagination { bottom: 12px !important; }
+        }
+
+        /* ========================= Category Badges ========================= */
+        .category-badge {
+            display: inline-block;
+            font-size: 0.75rem; font-weight: var(--font-weight-bold); /* Bolder */
+            padding: 0.4rem 1rem; border-radius: var(--border-radius-pill); /* Adjusted padding */
+            color: #fff; margin-bottom: 1.2rem; /* Increased margin */
+            text-transform: uppercase; letter-spacing: 1px; line-height: 1; /* Wider spacing */
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35); /* Enhanced shadow */
+            mix-blend-mode: normal;
+        }
+        .badge-game { background-color: var(--game-color); color: #000; }
+        .badge-movie { background-color: var(--movie-color); }
+        .badge-tv { background-color: var(--tv-color); }
+        .badge-review { background-color: var(--review-color); }
+
+        /* Badge on Card Image */
+        .card-image-container .category-badge {
+             position: absolute; top: 1.1rem; right: 1.1rem; z-index: 5; /* Adjusted position */
+             background-color: rgba(0,0,0,0.6); /* Darker bg */
+             backdrop-filter: blur(4px); /* More blur */
+             color: #fff;
+             box-shadow: none;
+             margin-bottom: 0;
+             font-size: 0.7rem; /* Slightly smaller on card */
+             padding: 0.35rem 0.8rem;
+         }
+         /* Override specific colors if needed on overlay */
+         .card-image-container .badge-game { background-color: rgba(var(--game-color-rgb), 0.85); color: #000;}
+
+
+        /* ========================= Grid Container ========================= */
+        .grid-container {
+             display: grid; gap: clamp(1.8rem, 4.5vw, 2.5rem); /* Increased responsive gap */
+         }
+        /* Default to 1 column */
+        .grid-cols-1 { grid-template-columns: 1fr; }
+        /* Medium screens: 2 columns */
+        @media (min-width: 640px) { /* sm */
+            .grid-cols-sm-2 { grid-template-columns: repeat(2, 1fr); }
+        }
+        /* Large screens: 3 columns */
+        @media (min-width: 992px) { /* lg */
+            .grid-cols-lg-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+        /* X-Large screens: 4 columns */
+        @media (min-width: 1280px) { /* xl */
+            .grid-cols-xl-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* ========================= Generic Card Base ========================= */
+        .card-base {
+             border-radius: var(--border-radius-lg); /* Use larger radius */
+             overflow: hidden;
+             background: var(--bg-dark-card);
+             box-shadow: var(--shadow-dark-md);
+             transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+             border: 1px solid var(--border-dark-primary);
+             display: flex;
+             flex-direction: column;
+         }
+         body:not(.dark-mode) .card-base {
+             background: var(--bg-light-card);
+             box-shadow: var(--shadow-light-md);
+             border-color: var(--border-light-primary);
+         }
+         .card-base:hover {
+             transform: translateY(-7px); /* Increased lift */
+             box-shadow: var(--shadow-dark-lg); /* Use larger shadow on hover */
+         }
+         body:not(.dark-mode) .card-base:hover {
+              box-shadow: var(--shadow-light-lg);
+         }
+         .card-image-container { position: relative; overflow: hidden; }
+         .card-image { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; transition: transform var(--transition-slow); /* Add transition for potential scaling */ }
+         .card-base:hover .card-image {
+            /* Optional: subtle scale on card hover */
+            /* transform: scale(1.03); */
+         }
+         .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; } /* Increased padding */
+         .card-title {
+             font-weight: var(--font-weight-semibold);
+             font-size: 1.2rem; margin-bottom: 0.75rem; line-height: 1.45; /* Slightly increased size/line-height */
+             color: var(--text-dark-primary);
+         }
+         body:not(.dark-mode) .card-title { color: var(--text-light-primary); }
+          .card-title a { color: inherit; }
+          .card-title a:hover { color: var(--accent-color); }
+          body:not(.dark-mode) .card-title a:hover { color: var(--primary-color); }
+
+         .card-meta-info { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; gap: 0.8rem; font-size: 0.88rem; color: var(--text-dark-tertiary); } /* Increased spacing */
+          body:not(.dark-mode) .card-meta-info { color: var(--text-light-tertiary); }
+
+
+        /* ========================= Now Playing Section ========================= */
+        .now-playing-section .section-title i.fa-circle {
+             font-size: 0.65em; /* Relative size */
+             color: var(--primary-color);
+             margin-right: 0.7rem; /* Increased margin */
+             animation: pulse-live 1.6s infinite ease-in-out;
+             vertical-align: middle; display: inline-block;
+        }
+        @keyframes pulse-live { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.75); } } /* Adjusted animation */
+
+        /* Specific height for Now Playing card images if needed */
+        .now-playing-card .card-image { aspect-ratio: 4 / 3; } /* Example different ratio */
+
+        .status-badge {
+             position: absolute; top: 0.9rem; left: 0.9rem; color: white; /* Adjusted position */
+             font-size: 0.75rem; font-weight: bold; padding: 0.4rem 0.75rem; /* Adjusted padding/size */
+             border-radius: var(--border-radius-sm); line-height: 1; text-transform: uppercase;
+             box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Stronger shadow */
+             backdrop-filter: blur(3px); /* Add subtle blur */
+         }
+        .badge-live { background-color: rgba(var(--primary-color-rgb), 0.85); } /* Use RGBA */
+        .badge-soon { background-color: rgba(var(--tv-color-rgb), 0.85); }
+        .badge-new-ep { background-color: rgba(var(--review-color-rgb), 0.85); }
+        .badge-renewed { background-color: rgba(22, 163, 74, 0.85); } /* Green with alpha */
+
+        .now-playing-card .genre, .now-playing-card .episode-info { font-size: 0.85rem; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } /* Adjusted size */
+        .now-playing-card .imdb-rating {
+             background-color: var(--accent-color); color: var(--bg-dark-primary);
+             font-size: 0.8rem; font-weight: var(--font-weight-bold); padding: 0.35rem 0.7rem; /* Adjusted size */
+             border-radius: var(--border-radius-sm); white-space: nowrap;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+         }
+         body:not(.dark-mode) .now-playing-card .imdb-rating {
+              background-color: var(--primary-color); color: #fff;
+         }
+        .now-playing-card .progress-section { margin-bottom: 1.2rem; } /* Increased margin */
+        .now-playing-card .progress-label { display: block; font-size: 0.85rem; color: var(--text-dark-tertiary); margin-bottom: 0.5rem; } /* Adjusted size */
+         body:not(.dark-mode) .now-playing-card .progress-label { color: var(--text-light-tertiary); }
+        .now-playing-card .progress-bar { height: 7px; background: rgba(255, 255, 255, 0.1); border-radius: var(--border-radius-pill); overflow: hidden; } /* Slightly thicker */
+         body:not(.dark-mode) .now-playing-card .progress-bar { background: rgba(0, 0, 0, 0.08); }
+        /* Progress value animation handled by JS + CSS Transition below */
+        .now-playing-card .progress-value {
+            height: 100%;
+            background: linear-gradient(to left, var(--secondary-color), var(--accent-color)); /* RTL gradient */
+            border-radius: var(--border-radius-pill);
+            transform-origin: right; /* Set origin for RTL animation */
+            transform: scaleX(0); /* Initial state for animation */
+            /* Transition applied via JS on scroll */
+        }
+        .now-playing-card .card-button {
+             display: flex; justify-content: center; align-items: center; gap: 0.6rem; /* Increased gap */
+             width: 100%; text-align: center; padding: 0.8rem 0; border-radius: var(--border-radius-md); /* Use md radius */
+             color: var(--bg-dark-primary); font-weight: var(--font-weight-semibold); font-size: 0.95rem; /* Adjusted size */
+             background: linear-gradient(95deg, var(--accent-color) 0%, var(--secondary-color) 100%); /* Adjusted angle */
+             transition: all var(--transition-normal);
+             border: none; cursor: pointer; margin-top: auto; /* Push button to bottom */
+         }
+         body:not(.dark-mode) .now-playing-card .card-button {
+            background: linear-gradient(95deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: #fff;
+         }
+         .now-playing-card .card-button:hover {
+              transform: scale(1.04); /* Slightly more scale */
+              filter: brightness(1.15); /* Brighter hover */
+              box-shadow: 0 5px 15px rgba(var(--secondary-color-rgb), 0.35); /* Stronger shadow */
+          }
+
+        /* ========================= Latest News Section ========================= */
+         .latest-news-section {
+             /* Subtle repeating gradient background */
+             background-image: linear-gradient(rgba(var(--primary-color-rgb), 0.02), transparent),
+                               linear-gradient(90deg, rgba(var(--secondary-color-rgb), 0.01), transparent);
+             background-size: 100px 100px;
+             padding-top: 4rem; /* Adjust padding if bg is added */
+         }
+         body:not(.dark-mode) .latest-news-section {
+             background-image: linear-gradient(rgba(var(--primary-color-rgb), 0.015), transparent),
+                               linear-gradient(90deg, rgba(var(--secondary-color-rgb), 0.008), transparent);
+         }
+
+        .news-card { /* Inherits from card-base */
+            /* Tilt effect managed by JS library */
+        }
+
+        .news-card:hover { /* Keep base hover effect subtle */
+            transform: translateY(-7px);
+            box-shadow: var(--shadow-dark-lg);
+        }
+        body:not(.dark-mode) .news-card:hover { box-shadow: var(--shadow-light-lg); }
+
+        .tilt-card-inner { /* Container for tilted elements if needed, but VanillaTilt handles it directly */
+             height: 100%; display: flex; flex-direction: column;
+         }
+
+        .news-card .card-image { transition: transform var(--transition-slow) ease-out; } /* Smoother transition */
+        .news-card:hover .card-image { transform: scale(1.05); } /* Refined scale */
+
+        .news-card .image-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 70%); /* Stronger bottom gradient */
+            opacity: 0; transition: opacity var(--transition-normal); pointer-events: none;
+        }
+        .news-card:hover .image-overlay { opacity: 1; }
+
+        .news-card .card-excerpt {
+             font-size: 0.95rem; margin-bottom: 1.2rem; color: var(--text-dark-secondary); /* Slightly larger */
+             line-height: 1.7; flex-grow: 1; /* Excerpt grows */
+             /* Clamp text to 3 lines */
+             display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+             text-overflow: ellipsis;
+         }
+        body:not(.dark-mode) .news-card .card-excerpt { color: var(--text-light-secondary); }
+
+        .news-card .card-meta-info { /* Use base meta styles */
+            margin-top: auto; /* Push meta to bottom */
+            padding-top: 1.2rem; border-top: 1px solid var(--border-dark-secondary); /* Increased padding */
+        }
+        body:not(.dark-mode) .news-card .card-meta-info { border-top-color: var(--border-light-secondary); }
+
+        .news-card .meta-link {
+             display: inline-flex; align-items: center; gap: 0.4rem; /* Increased gap */
+             color: var(--accent-color); font-weight: var(--font-weight-semibold); /* Semibold */
+             transition: color var(--transition-fast), transform var(--transition-fast); font-size: 0.9rem; /* Added transform */
+         }
+        .news-card .meta-link:hover { color: var(--secondary-color); transform: translateX(-4px); } /* Move icon */
+         body:not(.dark-mode) .news-card .meta-link { color: var(--primary-color); }
+         body:not(.dark-mode) .news-card .meta-link:hover { color: var(--secondary-color); }
+        .news-card .meta-link i { transition: transform 0.25s ease-out; font-size: 0.9em; }
+        /* Hover effect handled on parent .meta-link */
+
+        /* Section Button */
+        .section-view-all-button { text-align: center; margin-top: 4rem; } /* Increased margin */
+        .section-view-all-button .btn-primary-gradient {
+            display: inline-flex; align-items: center; gap: 0.6rem; /* Increased gap */
+            font-weight: var(--font-weight-bold); font-size: 1rem; /* Consistent size */
+            padding: 0.95rem 2.3rem; border-radius: var(--border-radius-pill); /* Adjusted padding */
+            color: #fff; /* Explicit white text */
+            background: linear-gradient(95deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Adjusted angle */
+            transition: all var(--transition-normal);
+            box-shadow: 0 5px 16px rgba(var(--primary-color-rgb), 0.3); /* Adjusted shadow */
+            border: none; cursor: pointer;
+        }
+         body:not(.dark-mode) .section-view-all-button .btn-primary-gradient {
+             color: #fff;
+         }
+        .section-view-all-button .btn-primary-gradient:hover {
+             transform: translateY(-4px) scale(1.04); /* Increased hover effect */
+             box-shadow: 0 8px 22px rgba(var(--secondary-color-rgb), 0.4); /* Stronger hover shadow */
+         }
+         .section-view-all-button .btn-primary-gradient i { transition: transform 0.25s ease-out; }
+         .section-view-all-button .btn-primary-gradient:hover i { transform: translateX(-5px); } /* Increased move */
+
+        /* ========================= Latest Trailers Section ========================= */
+        .trailer-card {
+            border-radius: var(--border-radius-lg); /* Use large radius */
+            overflow: hidden;
+            box-shadow: var(--shadow-dark-md);
+            transition: all var(--transition-normal);
+            position: relative; display: block; /* Ensure it behaves like a block link */
+        }
+        body:not(.dark-mode) .trailer-card { box-shadow: var(--shadow-light-md); }
+        .trailer-card:hover {
+            transform: translateY(-6px) scale(1.03); /* Adjusted hover */
+            box-shadow: var(--shadow-dark-lg);
+        }
+        body:not(.dark-mode) .trailer-card:hover { box-shadow: var(--shadow-light-lg); }
+
+        .trailer-card .card-image-container { position: relative; overflow: hidden; background-color: var(--bg-dark-secondary); /* Fallback bg */}
+        .trailer-card .card-image {
+            width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+            transition: transform var(--transition-slow), filter var(--transition-normal); /* Added filter transition */
+            display: block;
+        }
+        .trailer-card:hover .card-image { transform: scale(1.08); filter: brightness(0.9); } /* Slightly darken on hover */
+        .trailer-card .image-overlay {
+             position: absolute; inset: 0;
+             background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 80%); /* Stronger gradient */
+             transition: opacity var(--transition-normal); pointer-events: none;
+         }
+        .trailer-card .play-icon {
+            position: absolute; top: 50%; left: 50%;
+            width: 3.5rem; height: 3.5rem; /* Larger */
+            border-radius: 50%;
+            background-color: rgba(var(--primary-color-rgb), 0.85); /* More opaque */
+            display: flex; align-items: center; justify-content: center;
+            color: white; backdrop-filter: blur(5px); /* More blur */
+            transform: translate(-50%, -50%) scale(0.6); opacity: 0; /* Initial state */
+            transition: all 0.35s cubic-bezier(0.34, 1.8, 0.64, 1); /* Bouncier effect */
+             z-index: 5; font-size: 1.2rem; /* Larger icon */
+             box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* Stronger shadow */
+        }
+        .trailer-card:hover .play-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        .trailer-card .card-content-overlay {
+             position: absolute; bottom: 0; left: 0; right: 0;
+             padding: 1.2rem 1.5rem; /* Increased padding */
+             z-index: 3; color: white; pointer-events: none;
+             transition: transform var(--transition-normal); /* Use normal transition */
+         }
+        .trailer-card:hover .card-content-overlay { transform: translateY(-8px); } /* Increased lift */
+
+        .trailer-card .card-title {
+            font-weight: var(--font-weight-semibold); font-size: 1.05rem; /* Slightly larger */
+            margin-bottom: 0.35rem; color: white; line-height: 1.35; /* Adjusted line height */
+            text-shadow: 0 1px 4px rgba(0,0,0,0.9); /* Stronger shadow */
+         }
+        .trailer-card .card-duration { font-size: 0.85rem; color: #ccc; opacity: 0.95; } /* Brighter text */
+        /* Add icon to duration */
+        .trailer-card .card-duration i { margin-left: 0.4rem; font-size: 0.9em; vertical-align: middle; } /* Align icon */
+
+
+        /* ========================= Footer Styles ========================= */
+        .site-footer {
+            background-color: var(--bg-dark-footer);
+            color: var(--text-dark-secondary);
+            padding: clamp(3.5rem, 7vw, 5rem) 0 clamp(1.8rem, 4.5vw, 2.5rem) 0; /* Increased padding */
+            margin-top: auto;
+            font-size: 0.95rem; /* Slightly larger base font */
+            border-top: 1px solid var(--border-dark-secondary);
+            position: relative; overflow: hidden;
+        }
+        body:not(.dark-mode) .site-footer {
+            background-color: var(--bg-light-footer);
+            color: var(--text-light-secondary);
+            border-top-color: var(--border-light-secondary);
+        }
+        /* Footer Subtle Pattern Overlay */
+        .site-footer::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            /* Enhanced subtle gradient pattern */
+            background: radial-gradient(circle at 15% 85%, rgba(var(--primary-color-rgb), 0.06), transparent 55%),
+                        radial-gradient(circle at 85% 15%, rgba(var(--secondary-color-rgb), 0.04), transparent 60%);
+            pointer-events: none; z-index: 0; opacity: 0.8;
+            mix-blend-mode: overlay; /* Experiment with blend modes */
+        }
+         body:not(.dark-mode) .site-footer::before {
+            background: radial-gradient(circle at 15% 85%, rgba(var(--primary-color-rgb), 0.04), transparent 55%),
+                        radial-gradient(circle at 85% 15%, rgba(var(--secondary-color-rgb), 0.025), transparent 60%);
+            mix-blend-mode: multiply;
+         }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Slightly larger minmax */
+            gap: clamp(2.5rem, 6vw, 3.5rem); /* Increased responsive gap */
+            position: relative; z-index: 1;
+        }
+        .footer-section { padding: 0; }
+        .footer-section h3 {
+            color: var(--accent-color);
+            font-size: 1.3rem; margin-bottom: 1.5rem; /* Increased size/margin */
+            font-family: var(--font-logo); letter-spacing: 1.2px; /* Adjusted spacing */
+            text-transform: uppercase; font-weight: var(--font-weight-regular);
+            border-bottom: 1px solid var(--border-dark-secondary); /* Add subtle border */
+            padding-bottom: 0.6rem; display: inline-block; /* Make border fit content */
+        }
+         body:not(.dark-mode) .footer-section h3 { color: var(--primary-color); border-bottom-color: var(--border-light-secondary);}
+        .footer-section p, .footer-section ul { margin-bottom: 1.5rem; line-height: 1.8; } /* Increased spacing/line height */
+        .footer-section ul { list-style: none; padding: 0; }
+        .footer-section li { margin-bottom: 0.75rem; } /* Increased margin */
+        .footer-section a {
+            color: var(--text-dark-secondary);
+            transition: color var(--transition-fast), padding-right var(--transition-fast); /* Added padding transition */
+            display: inline-flex; align-items: center; gap: 0.6rem; /* Increased gap */
+            padding: 3px 0; font-weight: var(--font-weight-regular); /* Increased vertical padding */
+        }
+         body:not(.dark-mode) .footer-section a { color: var(--text-light-secondary); }
+        .footer-section a:hover { color: var(--accent-color); padding-right: 5px; } /* Move text slightly on hover */
+         body:not(.dark-mode) .footer-section a:hover { color: var(--primary-color); }
+        .footer-section li a i { color: var(--text-dark-tertiary); font-size: 0.95em; width: 1.3em; text-align: center; transition: color var(--transition-fast); } /* Add transition */
+        body:not(.dark-mode) .footer-section li a i { color: var(--text-light-tertiary); }
+        .footer-section li a:hover i { color: var(--accent-color); } /* Change icon color on hover */
+        body:not(.dark-mode) .footer-section li a:hover i { color: var(--primary-color); }
+
+        /* Social Icons */
+        .footer-social-icons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.2rem; }
+        @media (max-width: 768px) { .footer-social-icons { justify-content: flex-start; } }
+        .footer-social-icons a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%; /* Slightly larger */
+            background-color: rgba(255, 255, 255, 0.09); /* Slightly more visible */
+            color: var(--text-dark-secondary);
+            font-size: 1.05rem; transition: all var(--transition-normal); /* Increased size */
+        }
+         body:not(.dark-mode) .footer-social-icons a { background-color: rgba(0, 0, 0, 0.07); color: var(--text-light-secondary); }
+        .footer-social-icons a:hover {
+            background-color: var(--primary-color); color: white;
+            transform: translateY(-4px) scale(1.12); /* Increased hover effect */
+            box-shadow: 0 5px 12px rgba(var(--primary-color-rgb), 0.35); /* Stronger shadow */
+        }
+
+        /* Newsletter */
+        .footer-section-newsletter .newsletter-form { display: flex; gap: 0.5rem; max-width: 100%; }
+        .footer-section-newsletter input[type="email"] {
+            padding: 0.85rem 1.1rem; border-radius: var(--border-radius-md); /* Adjusted padding/radius */
+            border: 1px solid var(--border-dark-primary);
+            background-color: rgba(255, 255, 255, 0.06); /* Adjusted alpha */
+            color: var(--text-dark-primary); font-size: 0.95rem; font-family: inherit; flex-grow: 1;
+            outline: none; transition: all var(--transition-fast);
+        }
+         body:not(.dark-mode) .footer-section-newsletter input[type="email"] {
+              background-color: rgba(0, 0, 0, 0.04);
+              color: var(--text-light-primary);
+              border-color: var(--border-light-primary);
+         }
+        .footer-section-newsletter input[type="email"]::placeholder { color: var(--text-dark-tertiary); opacity: 0.75; }
+        body:not(.dark-mode) .footer-section-newsletter input[type="email"]::placeholder { color: var(--text-light-tertiary); opacity: 0.75; }
+        /* Focus handled by global :focus-visible, but can add specifics */
+        .footer-section-newsletter input[type="email"]:focus {
+             background-color: rgba(255, 255, 255, 0.09);
+             border-color: var(--accent-color);
+             /* box-shadow handled globally */
+        }
+         body:not(.dark-mode) .footer-section-newsletter input[type="email"]:focus {
+              background-color: rgba(0, 0, 0, 0.06);
+              border-color: var(--primary-color);
+         }
+        .footer-section-newsletter button[type="submit"] {
+            padding: 0 1.4rem; /* Horizontal padding for icon */
+            border-radius: var(--border-radius-md); border: none;
+            background-color: var(--primary-color); color: #fff;
+            font-size: 1.1rem; /* Match icon size */
+            font-family: inherit; line-height: 1;
+            cursor: pointer; transition: all var(--transition-normal); white-space: nowrap;
+            display: inline-flex; align-items: center; justify-content: center; /* Center icon */
+        }
+        .footer-section-newsletter button[type="submit"]:hover {
+             background-color: var(--secondary-color);
+             transform: scale(1.05); /* Scale effect */
+             box-shadow: 0 4px 12px rgba(var(--secondary-color-rgb), 0.3); /* Adjusted shadow */
+         }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center; padding-top: 3rem; /* Increased padding */
+            border-top: 1px solid var(--border-dark-secondary); margin-top: 3rem; /* Increased margin */
+            font-size: 0.9rem; color: var(--text-dark-tertiary); font-weight: var(--font-weight-regular); /* Adjusted size */
+        }
+        body:not(.dark-mode) .footer-bottom {
+             border-top-color: var(--border-light-secondary);
+             color: var(--text-light-tertiary);
+        }
+        .footer-bottom i.fa-heart {
+             color: var(--primary-color); font-size: 0.8rem; /* Adjusted size */
+             vertical-align: middle; margin: 0 4px; /* Adjusted margin */
+             animation: pulse-heart 1.6s infinite ease-in-out;
+        }
+        @keyframes pulse-heart { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } } /* Increased pulse */
+
+        /* ========================= Controls Styles ========================= */
+        .controls {
+             position: fixed; bottom: 1.8rem; right: 1.8rem; display: flex; flex-direction: column; /* Adjusted position */
+             gap: 0.9rem; z-index: 1001; /* Increased gap */
+             opacity: 0; visibility: hidden; transform: translateY(25px); /* Increased offset */
+             transition: opacity var(--transition-normal), visibility 0s var(--transition-normal), transform var(--transition-normal);
+        }
+        .controls.visible {
+            opacity: 1; visibility: visible; transform: translateY(0);
+            transition: opacity var(--transition-normal), visibility 0s, transform var(--transition-normal);
+         }
+
+        .control-button {
+            width: 46px; height: 46px; border-radius: 50%; border: none; /* Slightly larger */
+            background: rgba(var(--primary-color-rgb), 0.85); /* More opaque */
+            color: #fff; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all var(--transition-normal);
+            font-size: 1.05rem; box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3); /* Increased shadow */
+            backdrop-filter: blur(6px); /* Increased blur */
+        }
+        body:not(.dark-mode) .control-button {
+            background: rgba(25, 25, 25, 0.9); /* Darker in light mode */
+            color: var(--text-dark-primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+        }
+        .control-button:hover {
+             transform: scale(1.15); /* Increased scale */
+             background: var(--accent-color);
+             color: var(--bg-dark-primary);
+             box-shadow: 0 7px 18px rgba(var(--accent-color-rgb), 0.35); /* Stronger shadow */
+         }
+         body:not(.dark-mode) .control-button:hover {
+              background: var(--primary-color);
+              color: white;
+              box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.3);
+          }
+
+        /* ========================= Utility Classes ========================= */
+        .hidden { display: none !important; }
+        .sr-only { /* Screen reader only */
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
+
+    </style>
+</head>
+<body class="dark-mode"> <!-- Default to dark mode, JS handles preference -->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="#" aria-label="صفحه اصلی هامووی">
+                        <!-- Keep original path as provided -->
+                        <img src="logo.png" alt="لوگو هامووی" class="logo">
+                    </a>
+                    <!-- Optional: Site title uncomment if needed -->
+                    <!-- <a href="#" class="site-title">هامووی</a> -->
+                </div>
+
+                <nav class="main-navigation" aria-label="منوی اصلی">
+                     <ul>
+                        <li><a href="#" class="active">صفحه اصلی</a></li>
+                        <li><a href="#">فیلم‌ها</a></li>
+                        <li><a href="#">سریال‌ها</a></li>
+                        <li><a href="#">بازی‌ها</a></li>
+                        <li><a href="#">تریلرها</a></li>
+                        <li><a href="#">نقد و بررسی</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-menu">
+                     <span class="sr-only">منو</span>
+                    <div class="hamburger-line-top"></div>
+                    <div class="hamburger-line-middle"></div>
+                    <div class="hamburger-line-bottom"></div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+     <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-hidden="true">
+        <ul>
+           <li><a href="#" class="active">صفحه اصلی</a></li>
+           <li><a href="#">فیلم‌ها</a></li>
+           <li><a href="#">سریال‌ها</a></li>
+           <li><a href="#">بازی‌ها</a></li>
+           <li><a href="#">تریلرها</a></li>
+           <li><a href="#">نقد و بررسی</a></li>
+       </ul>
+   </div>
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Hero Section -->
+        <!-- Keep original paths as provided -->
+        <section class="hero-section" style="background-image: url('VI.png');">
+             <div class="hero-gradient-overlay"></div>
+            <div class="container">
+                 <div class="hero-content">
+                    <h1 class="hero-title">جهان سرگرمی در دستان شما</h1>
+                    <p class="hero-subtitle">عمیق‌ترین تحلیل‌ها، داغ‌ترین اخبار و جدیدترین تریلرهای دنیای فیلم، سریال و بازی‌های ویدیویی را در هامووی دنبال کنید.</p>
+                    <a href="#latest-news" class="hero-button">
+                        کاوش را آغاز کنید
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Articles Marquee -->
+        <section class="marquee-section" aria-label="آخرین مقالات">
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <!-- Content repeated twice for seamless looping -->
+                    <div class="marquee-item">
+                        <span class="label">تازه‌ها:</span>
+                        <span>تحلیل گیم‌پلی GTA VI</span><span class="separator">•</span>
+                        <span>بازگشت «دنیای ژوراسیک»</span><span class="separator">•</span>
+                        <span>رکوردشکنی «خاندان اژدها»</span><span class="separator">•</span>
+                        <span>بازیگر جدید تارانتینو</span><span class="separator">•</span>
+                        <span>آپدیت Cyberpunk 2077</span><span class="separator">•</span>
+                        <span>تمدید The Last of Us</span><span class="separator">•</span>
+                        <span>نقد "تل‌ماسه: بخش دو"</span>
+                    </div>
+                     <div class="marquee-item" aria-hidden="true"> <!-- Duplicate for loop -->
+                        <span class="label">تازه‌ها:</span>
+                        <span>تحلیل گیم‌پلی GTA VI</span><span class="separator">•</span>
+                        <span>بازگشت «دنیای ژوراسیک»</span><span class="separator">•</span>
+                        <span>رکوردشکنی «خاندان اژدها»</span><span class="separator">•</span>
+                        <span>بازیگر جدید تارانتینو</span><span class="separator">•</span>
+                        <span>آپدیت Cyberpunk 2077</span><span class="separator">•</span>
+                        <span>تمدید The Last of Us</span><span class="separator">•</span>
+                        <span>نقد "تل‌ماسه: بخش دو"</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured News Section (Carousel) -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title">خبر ویژه</h2>
+                    <!-- Optional link -->
+                    <!-- <a href="#" class="section-link">همه ویژه ها <i class="fas fa-arrow-left"></i></a> -->
+                </div>
+
+                <div class="swiper featured-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide" role="group" aria-label="اسلاید 1 از 3: تحلیل گیم‌پلی GTA VI">
+                            <img loading="lazy" src="VII.png" alt="تصویر خبر تحلیل GTA VI">
+                            <div class="slide-overlay"></div>
+                            <div class="slide-content">
+                                <span class="category-badge badge-game">گیم</span>
+                                <h3 class="slide-title">تحلیل عمیق گیم‌پلی GTA VI: نوآوری‌ها و انتظارات</h3>
+                                <p class="slide-description">نگاهی به جزئیات گیم‌پلی فاش شده از GTA VI و آنچه این بازی را متمایز می‌کند.</p>
+                                <div class="slide-meta">
+                                    <span class="meta-info">۳۰ فروردین ۱۴۰۴ | محمد کریمی</span>
+                                    <a href="#" class="meta-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide" role="group" aria-label="اسلاید 2 از 3: بازگشت دنیای ژوراسیک">
+                             <img loading="lazy" src="D.png" alt="تصویر خبر دنیای ژوراسیک">
+                             <div class="slide-overlay"></div>
+                             <div class="slide-content">
+                                 <span class="category-badge badge-movie">فیلم</span>
+                                 <h3 class="slide-title">«دنیای ژوراسیک: سلطنت» و بازگشت نوستالژیک</h3>
+                                 <p class="slide-description">تریلر جدید بازگشت شخصیت‌های اصلی را تایید کرد و هیجان طرفداران را برانگیخته است.</p>
+                                 <div class="slide-meta">
+                                     <span class="meta-info">۲ اردیبهشت ۱۴۰۴ | علی محمدی</span>
+                                     <a href="#" class="meta-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                                 </div>
+                             </div>
+                         </div>
+                        <!-- Slide 3 -->
+                         <div class="swiper-slide" role="group" aria-label="اسلاید 3 از 3: رکوردشکنی خاندان اژدها">
+                             <img loading="lazy" src="HBO.png" alt="تصویر خبر خاندان اژدها">
+                             <div class="slide-overlay"></div>
+                             <div class="slide-content">
+                                 <span class="category-badge badge-tv">سریال</span>
+                                 <h3 class="slide-title">«خاندان اژدها» رکورد HBO را شکست</h3>
+                                 <p class="slide-description">فصل دوم با استقبال بی‌نظیر مواجه شد و رکورد پربیننده‌ترین پخش اول را شکست.</p>
+                                 <div class="slide-meta">
+                                     <span class="meta-info">۱ اردیبهشت ۱۴۰۴ | زهرا رضایی</span>
+                                     <a href="#" class="meta-link">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                    <!-- Swiper Controls -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next" aria-label="اسلاید بعدی"></div>
+                    <div class="swiper-button-prev" aria-label="اسلاید قبلی"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Now Playing Section -->
+        <section class="now-playing-section">
+            <div class="container">
+                 <div class="section-heading">
+                    <h2 class="section-title">در حال پخش <i class="fas fa-circle"></i></h2>
+                    <a href="#" class="section-link">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="grid-container grid-cols-1 grid-cols-sm-2 grid-cols-xl-4">
+                    <!-- Card 1 -->
+                    <article class="now-playing-card card-base">
+                         <div class="card-image-container">
+                            <!-- Keep paths as provided -->
+                            <img loading="lazy" src="D.png" alt="پوستر دنیای ژوراسیک: سلطنت" class="card-image">
+                            <div class="status-badge badge-live">اکران</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">دنیای ژوراسیک: سلطنت</a></h3>
+                            <div class="card-meta-info">
+                                <span class="genre">ماجراجویی، علمی تخیلی</span>
+                                <span class="imdb-rating">IMDB 7.8</span>
+                            </div>
+                            <div class="progress-section">
+                                <span class="progress-label">امتیاز کاربران: 82%</span>
+                                <div class="progress-bar"><div class="progress-value" style="width: 82%"></div></div>
+                            </div>
+                            <a href="#" class="card-button"><i class="fas fa-ticket-alt"></i> خرید بلیت</a>
+                        </div>
+                    </article>
+                    <!-- Card 2 -->
+                    <article class="now-playing-card card-base">
+                         <div class="card-image-container">
+                             <img loading="lazy" src="TARANTENO.png" alt="پوستر آخرین فیلم تارانتینو" class="card-image">
+                             <div class="status-badge badge-soon">به زودی</div>
+                         </div>
+                         <div class="card-content">
+                             <h3 class="card-title"><a href="#">آخرین فیلم تارانتینو</a></h3>
+                             <div class="card-meta-info">
+                                 <span class="genre">درام، جنایی</span>
+                                 <span class="imdb-rating">انتظار 8.4</span>
+                             </div>
+                             <div class="progress-section">
+                                 <span class="progress-label">میزان انتظار: 95%</span>
+                                 <div class="progress-bar"><div class="progress-value" style="width: 95%"></div></div>
+                             </div>
+                             <a href="#" class="card-button"><i class="fas fa-bell"></i> یادآوری</a>
+                         </div>
+                     </article>
+                    <!-- Card 3 -->
+                    <article class="now-playing-card card-base">
+                         <div class="card-image-container">
+                            <!-- Assuming img folder based on previous, but keep as provided if different -->
+                            <img loading="lazy" src="HBO.png" alt="پوستر سریال خاندان اژدها" class="card-image">
+                            <div class="status-badge badge-new-ep">قسمت جدید</div>
+                         </div>
+                         <div class="card-content">
+                             <h3 class="card-title"><a href="#">خاندان اژدها</a></h3>
+                             <div class="card-meta-info">
+                                 <span class="episode-info">فصل 2 - قسمت 4</span>
+                                 <span class="imdb-rating">IMDB 9.2</span>
+                             </div>
+                             <div class="progress-section">
+                                 <span class="progress-label">امتیاز فصل: 89%</span>
+                                 <div class="progress-bar"><div class="progress-value" style="width: 89%"></div></div>
+                             </div>
+                             <a href="#" class="card-button"><i class="fas fa-play"></i> تماشا</a>
+                         </div>
+                     </article>
+                    <!-- Card 4 -->
+                     <article class="now-playing-card card-base">
+                         <div class="card-image-container">
+                            <!-- Assuming img folder -->
+                             <img loading="lazy" src="img/tv-news2.jpg" alt="پوستر سریال The Last of Us" class="card-image">
+                             <div class="status-badge badge-renewed">تمدید</div>
+                         </div>
+                         <div class="card-content">
+                             <h3 class="card-title"><a href="#">The Last of Us</a></h3>
+                             <div class="card-meta-info">
+                                 <span class="episode-info">فصل 2 در تولید</span>
+                                 <span class="imdb-rating">IMDB 8.7</span>
+                             </div>
+                             <div class="progress-section">
+                                 <span class="progress-label">پیشرفت تولید: 65%</span>
+                                 <div class="progress-bar"><div class="progress-value" style="width: 65%"></div></div>
+                             </div>
+                             <a href="#" class="card-button"><i class="fas fa-info-circle"></i> اطلاعات</a>
+                         </div>
+                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section id="latest-news" class="latest-news-section">
+            <div class="container">
+                 <div class="section-heading">
+                    <h2 class="section-title">تازه‌ترین‌ها</h2>
+                    <a href="#" class="section-link">مشاهده آرشیو <i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="grid-container grid-cols-1 grid-cols-sm-2 grid-cols-lg-3">
+                    <!-- News Card 1 -->
+                    <article class="news-card card-base tilt-card">
+                        <!-- Removed tilt-card-inner wrapper, VanillaTilt applies directly -->
+                        <a href="#" class="card-image-container" aria-label="خواندن خبر دنیای ژوراسیک">
+                            <!-- Keep path as provided -->
+                            <img loading="lazy" src="D.png" alt="تصویر کوچک خبر دنیای ژوراسیک" class="card-image">
+                            <div class="image-overlay"></div>
+                            <span class="category-badge badge-movie">فیلم</span>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">«دنیای ژوراسیک: سلطنت» و بازگشت نوستالژیک</a></h3>
+                            <p class="card-excerpt">تریلر جدید بازگشت شخصیت‌های اصلی فیلم اول را تایید کرد و هیجان طرفداران را برای دیدن دوباره دایناسورها و قهرمانان قدیمی برانگیخته است.</p>
+                            <div class="card-meta-info">
+                                <span class="meta-info">۲ اردیبهشت ۱۴۰۴</span>
+                                <a href="#" class="meta-link">ادامه <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- News Card 2 -->
+                    <article class="news-card card-base tilt-card">
+                       <a href="#" class="card-image-container" aria-label="خواندن خبر خاندان اژدها">
+                            <!-- Keep path as provided -->
+                            <img loading="lazy" src="HBO.png" alt="تصویر کوچک خبر خاندان اژدها" class="card-image">
+                            <div class="image-overlay"></div>
+                            <span class="category-badge badge-tv">سریال</span>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">«خاندان اژدها» رکورد HBO را شکست</a></h3>
+                            <p class="card-excerpt">فصل دوم سریال پیش‌درآمد «بازی تاج و تخت» با استقبال بی‌نظیر بینندگان مواجه شد و آمار بینندگان قسمت اول آن از رکوردهای قبلی شبکه عبور کرد.</p>
+                            <div class="card-meta-info">
+                                <span class="meta-info">۱ اردیبهشت ۱۴۰۴</span>
+                                <a href="#" class="meta-link">ادامه <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- News Card 3 -->
+                    <article class="news-card card-base tilt-card">
+                       <a href="#" class="card-image-container" aria-label="خواندن خبر فیلم تارانتینو">
+                            <!-- Keep path as provided -->
+                            <img loading="lazy" src="TARANTENO.png" alt="تصویر کوچک خبر فیلم تارانتینو" class="card-image">
+                            <div class="image-overlay"></div>
+                            <span class="category-badge badge-movie">فیلم</span>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">بازیگر فیلم جدید تارانتینو مشخص شد</a></h3>
+                            <p class="card-excerpt">گزارش‌ها حاکی از آن است که کارگردان مشهور، کوئنتین تارانتینو، بازیگر اصلی آخرین فیلم سینمایی خود با عنوان «منتقد فیلم» را انتخاب کرده است.</p>
+                            <div class="card-meta-info">
+                                <span class="meta-info">۳ اردیبهشت ۱۴۰۴</span>
+                                <a href="#" class="meta-link">ادامه <i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- News Card 4 -->
+                     <article class="news-card card-base tilt-card">
+                        <a href="#" class="card-image-container" aria-label="خواندن خبر Cyberpunk 2077">
+                             <!-- Assuming img folder -->
+                             <img loading="lazy" src="img/game-news2.jpg" alt="تصویر کوچک خبر Cyberpunk 2077" class="card-image">
+                             <div class="image-overlay"></div>
+                             <span class="category-badge badge-game">گیم</span>
+                         </a>
+                         <div class="card-content">
+                             <h3 class="card-title"><a href="#">آپدیت بزرگ Cyberpunk 2077 در راه است</a></h3>
+                             <p class="card-excerpt">استودیوی CD Projekt Red جزئیات آپدیت بزرگ بعدی بازی Cyberpunk 2077 را منتشر کرد که شامل محتوای داستانی جدید و بهبودهای گیم‌پلی می‌شود.</p>
+                             <div class="card-meta-info">
+                                 <span class="meta-info">۲ اردیبهشت ۱۴۰۴</span>
+                                 <a href="#" class="meta-link">ادامه <i class="fas fa-arrow-left"></i></a>
+                             </div>
+                         </div>
+                     </article>
+                    <!-- News Card 5 -->
+                     <article class="news-card card-base tilt-card">
+                        <a href="#" class="card-image-container" aria-label="خواندن خبر The Last of Us">
+                             <!-- Keep path as provided - Corrected to tv-news2 based on context -->
+                             <img loading="lazy" src="img/tv-news2.jpg" alt="تصویر کوچک خبر The Last of Us" class="card-image">
+                             <div class="image-overlay"></div>
+                             <span class="category-badge badge-tv">سریال</span>
+                         </a>
+                         <div class="card-content">
+                             <h3 class="card-title"><a href="#">The Last of Us برای فصل سوم تمدید شد؟</a></h3>
+                             <p class="card-excerpt">با وجود موفقیت چشمگیر فصل اول، شایعاتی مبنی بر تمدید زودهنگام سریال The Last of Us برای فصل سوم توسط شبکه HBO به گوش می‌رسد.</p>
+                             <div class="card-meta-info">
+                                 <span class="meta-info">۱ اردیبهشت ۱۴۰۴</span>
+                                 <a href="#" class="meta-link">ادامه <i class="fas fa-arrow-left"></i></a>
+                             </div>
+                         </div>
+                     </article>
+                    <!-- News Card 6 -->
+                     <article class="news-card card-base tilt-card">
+                        <a href="#" class="card-image-container" aria-label="خواندن نقد تل‌ماسه: بخش دو">
+                             <!-- Assuming img folder -->
+                             <img loading="lazy" src="img/movie-news3.jpg" alt="تصویر کوچک نقد تل‌ماسه: بخش دو" class="card-image">
+                             <div class="image-overlay"></div>
+                             <span class="category-badge badge-review">نقد</span>
+                         </a>
+                         <div class="card-content">
+                             <h3 class="card-title"><a href="#">نقد فیلم "تل‌ماسه: بخش دو" - حماسه‌ای شن‌زار</a></h3>
+                             <p class="card-excerpt">بررسی عمیق جدیدترین ساخته دنی ویلنوو؛ آیا دنباله «تل‌ماسه» توانسته انتظارات را برآورده کند و حماسه‌ای ماندگار خلق کند؟</p>
+                             <div class="card-meta-info">
+                                 <span class="meta-info">۴ اردیبهشت ۱۴۰۴</span>
+                                 <a href="#" class="meta-link">ادامه <i class="fas fa-arrow-left"></i></a>
+                             </div>
+                         </div>
+                     </article>
+                </div>
+
+                <div class="section-view-all-button">
+                    <a href="#" class="btn-primary-gradient">مشاهده همه اخبار <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Trailers Section -->
+        <section class="latest-trailers-section">
+            <div class="container">
+                 <div class="section-heading">
+                    <h2 class="section-title">آخرین تریلرها</h2>
+                    <a href="#" class="section-link">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+                </div>
+                 <div class="grid-container grid-cols-1 grid-cols-sm-2 grid-cols-xl-4">
+                    <!-- Trailer 1 -->
+                    <a href="#" class="trailer-card" aria-label="تماشای تریلر Dune: Part Two">
+                        <div class="card-image-container">
+                            <!-- Assuming img folder -->
+                            <img loading="lazy" src="img/trailer-thumb1.jpg" alt="تصویر بندانگشتی تریلر Dune: Part Two" class="card-image">
+                            <div class="image-overlay"></div>
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                            <div class="card-content-overlay">
+                                <h3 class="card-title">تریلر نهایی فیلم Dune: Part Two</h3>
+                                <span class="card-duration"><i class="fas fa-clock fa-xs"></i> ۲:۳۰</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Trailer 2 -->
+                     <a href="#" class="trailer-card" aria-label="تماشای تریلر Star Wars Outlaws">
+                         <div class="card-image-container">
+                             <img loading="lazy" src="img/trailer-thumb2.jpg" alt="تصویر بندانگشتی تریلر Star Wars Outlaws" class="card-image">
+                             <div class="image-overlay"></div>
+                             <div class="play-icon"><i class="fas fa-play"></i></div>
+                             <div class="card-content-overlay">
+                                 <h3 class="card-title">گیم‌پلی Star Wars Outlaws</h3>
+                                 <span class="card-duration"><i class="fas fa-clock fa-xs"></i> ۴:۱۵</span>
+                             </div>
+                         </div>
+                     </a>
+                    <!-- Trailer 3 -->
+                     <a href="#" class="trailer-card" aria-label="تماشای تریلر The Boys">
+                         <div class="card-image-container">
+                             <img loading="lazy" src="img/trailer-thumb3.jpg" alt="تصویر بندانگشتی تریلر The Boys" class="card-image">
+                             <div class="image-overlay"></div>
+                             <div class="play-icon"><i class="fas fa-play"></i></div>
+                             <div class="card-content-overlay">
+                                 <h3 class="card-title">تریلر فصل چهارم The Boys</h3>
+                                  <span class="card-duration"><i class="fas fa-clock fa-xs"></i> ۳:۰۸</span>
+                             </div>
+                         </div>
+                     </a>
+                    <!-- Trailer 4 -->
+                     <a href="#" class="trailer-card" aria-label="تماشای تریلر Fable">
+                         <div class="card-image-container">
+                             <img loading="lazy" src="img/trailer-thumb4.jpg" alt="تصویر بندانگشتی تریلر Fable" class="card-image">
+                             <div class="image-overlay"></div>
+                             <div class="play-icon"><i class="fas fa-play"></i></div>
+                             <div class="card-content-overlay">
+                                 <h3 class="card-title">معرفی بازی جدید Fable</h3>
+                                 <span class="card-duration"><i class="fas fa-clock fa-xs"></i> ۲:۴۵</span>
+                             </div>
+                         </div>
+                     </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container container">
+            <div class="footer-section footer-section-about">
+                 <!-- Added logo to footer title -->
+                 <h3>
+                    <img src="logo.png" alt="" style="height: 1em; vertical-align: -0.15em; margin-left: 0.5em; filter: grayscale(30%) brightness(1.5);">هامووی <span role="img" aria-label="آیکن فیلم" style="opacity: 0.8;">🎬</span>
+                 </h3>
+                <p>مرجع تخصصی شما برای اخبار، نقد و بررسی فیلم، سریال و بازی. جدیدترین‌ها و بهترین‌های دنیای سرگرمی را با ما دنبال کنید.</p>
+                <div class="footer-social-icons">
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="اینستاگرام"><i class="fab fa-instagram"></i><span class="sr-only">اینستاگرام</span></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="تلگرام"><i class="fab fa-telegram"></i><span class="sr-only">تلگرام</span></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="یوتیوب"><i class="fab fa-youtube"></i><span class="sr-only">یوتیوب</span></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="توییتر / X"><i class="fa-brands fa-x-twitter"></i><span class="sr-only">توییتر / X</span></a>
+                </div>
+            </div>
+
+            <div class="footer-section footer-section-links">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home fa-fw"></i> صفحه اصلی</a></li>
+                    <li><a href="#"><i class="fas fa-film fa-fw"></i> فیلم‌ها</a></li>
+                    <li><a href="#"><i class="fas fa-tv fa-fw"></i> سریال‌ها</a></li>
+                    <li><a href="#"><i class="fas fa-gamepad fa-fw"></i> بازی‌ها</a></li>
+                    <li><a href="#"><i class="fas fa-video fa-fw"></i> تریلرها</a></li>
+                    <li><a href="#"><i class="fas fa-star-half-alt fa-fw"></i> نقد و بررسی</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle fa-fw"></i> درباره ما</a></li>
+                    <li><a href="#"><i class="fas fa-file-contract fa-fw"></i> قوانین</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-section-newsletter">
+                <h3>خبرنامه</h3>
+                <p>برای دریافت آخرین اخبار و تحلیل‌ها در ایمیل خود، عضو شوید:</p>
+                <form class="newsletter-form" action="#" method="post">
+                    <label for="newsletter-email" class="sr-only">ایمیل برای خبرنامه</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="ایمیل شما..." required>
+                    <button type="submit" aria-label="عضویت در خبرنامه"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+             <p>© <span id="current-year"></span> هامووی. تمامی حقوق محفوظ است. با <i class="fas fa-heart"></i> توسط تیم هامووی.</p>
+        </div>
+    </footer>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-button theme-toggle" id="theme-toggle-button" title="تغییر تم" aria-label="تغییر حالت نمایش">
+            <i class="fas fa-moon"></i> <!-- Icon updated by JS -->
+        </button>
+        <button class="control-button scroll-top" id="scroll-top-button" title="بازگشت به بالا" aria-label="برو به بالای صفحه">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Make sure Vanilla Tilt is loaded if you use the tilt effect -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script>
+        // Wrap script in an IIFE for scope protection
+        (function() {
+            'use strict'; // Enforce stricter parsing and error handling
+
+            // --- Element Cache ---
+            // Cache frequently accessed DOM elements to improve performance
+            const cache = {
+                body: document.body,
+                htmlElement: document.documentElement,
+                preloader: document.querySelector('.preloader'),
+                header: document.querySelector('.site-header'),
+                hamburgerMenu: document.getElementById('hamburger-menu'),
+                mobileMenu: document.getElementById('mobile-menu'),
+                mobileMenuBackdrop: document.getElementById('mobile-menu-backdrop'),
+                mobileNavLinks: document.querySelectorAll('.mobile-menu ul li a'),
+                desktopNavLinks: document.querySelectorAll('.main-navigation ul li a'),
+                themeToggleBtn: document.getElementById('theme-toggle-button'),
+                scrollTopBtn: document.getElementById('scroll-top-button'),
+                controlsContainer: document.querySelector('.controls'),
+                currentYearSpan: document.getElementById('current-year'),
+                progressBars: document.querySelectorAll('.now-playing-card .progress-value'), // Scope to now-playing cards
+                tiltCards: document.querySelectorAll('.tilt-card'),
+                featuredSwiperEl: document.querySelector('.featured-swiper'),
+            };
+
+            // --- Utility Functions ---
+            // Debounce function to limit the rate at which a function can fire
+            function debounce(func, wait, immediate) {
+                let timeout;
+                return function executedFunction() {
+                    const context = this;
+                    const args = arguments;
+                    const later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    const callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // --- Core Functionality ---
+
+            // Preloader Handling
+            function handlePreloader() {
+                if (!cache.preloader) return;
+                window.addEventListener('load', () => {
+                    // Use a timeout for fade-out initiation
+                    setTimeout(() => {
+                        if (cache.preloader) {
+                            cache.preloader.classList.add('fade-out');
+                        }
+                        // Remove preload/initial class AFTER fade starts for smoother render
+                        if (cache.body) {
+                             // If you added a class like 'preload' or 'loading' initially, remove it here.
+                             // cache.body.classList.remove('preload');
+                        }
+                        // Remove preloader from DOM after transition ends for performance
+                         cache.preloader.addEventListener('transitionend', () => {
+                            cache.preloader.remove();
+                         }, { once: true });
+                    }, 150); // Adjust timing as needed
+                }, { once: true });
+            }
+
+            // Theme Management
+            function applyTheme(theme) {
+                const isDarkMode = theme === 'dark';
+                // Toggle class only on <html> for simplicity with :not() selector
+                cache.htmlElement.classList.toggle('dark-mode', isDarkMode);
+                // Optional: Add/remove class on body if specifically needed by styles
+                // cache.body.classList.toggle('dark-mode', isDarkMode);
+
+                // Update theme toggle button icon and aria-label
+                if (cache.themeToggleBtn) {
+                    const icon = cache.themeToggleBtn.querySelector('i');
+                    if (icon) {
+                        icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+                    }
+                    cache.themeToggleBtn.setAttribute('aria-label', isDarkMode ? 'تغییر به حالت روشن' : 'تغییر به حالت تاریک');
+                    cache.themeToggleBtn.title = isDarkMode ? 'تغییر به حالت روشن' : 'تغییر به حالت تاریک'; // Update title too
+                }
+                // Update theme-color meta tags
+                try {
+                    document.querySelector('meta[name="theme-color"][media="(prefers-color-scheme: light)"]').setAttribute('content', isDarkMode ? '#0b0b0b' : '#f8f8f8');
+                    document.querySelector('meta[name="theme-color"][media="(prefers-color-scheme: dark)"]').setAttribute('content', isDarkMode ? '#0b0b0b' : '#f8f8f8');
+                } catch(e) {
+                    // console.warn("Could not update theme-color meta tags.");
+                }
+            }
+
+            function setupTheme() {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                // Default to dark mode if no preference saved or detected
+                let currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+                // Force dark mode as default if nothing is set (as per body class in HTML)
+                if (!savedTheme) { currentTheme = 'dark'; }
+
+
+                applyTheme(currentTheme);
+
+                if (cache.themeToggleBtn) {
+                    cache.themeToggleBtn.addEventListener('click', () => {
+                        // Check class on html element
+                        const newTheme = cache.htmlElement.classList.contains('dark-mode') ? 'light' : 'dark';
+                        applyTheme(newTheme);
+                        localStorage.setItem('theme', newTheme);
+                    });
+                }
+
+                 // Listen for system theme changes ONLY if no theme is manually set
+                 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                     if (!localStorage.getItem('theme')) {
+                         applyTheme(e.matches ? 'dark' : 'light');
+                     }
+                 });
+            }
+
+            // Scroll-based Behaviors (Header Shrink, Controls Visibility)
+            function handleScroll() {
+                const scrollY = window.pageYOffset;
+                const showControlsThreshold = 200; // Show controls a bit later
+                const shrinkHeaderThreshold = 60; // Slightly later shrink
+
+                // Toggle visibility of controls container
+                if (cache.controlsContainer) {
+                     cache.controlsContainer.classList.toggle('visible', scrollY > showControlsThreshold);
+                 }
+                 // Toggle shrink class on header
+                if (cache.header) {
+                    cache.header.classList.toggle('shrink', scrollY > shrinkHeaderThreshold);
+                }
+            }
+
+            // Mobile Menu Toggle Functionality (Improved Focus Management)
+            let focusedElementBeforeMenu; // Variable to store focus
+
+            function toggleMobileMenu(show) {
+                if (!cache.mobileMenu || !cache.hamburgerMenu || !cache.mobileMenuBackdrop) return;
+
+                const isActive = typeof show === 'boolean' ? show : !cache.mobileMenu.classList.contains('active');
+
+                if (isActive) {
+                    focusedElementBeforeMenu = document.activeElement; // Store focus
+                }
+
+                cache.hamburgerMenu.classList.toggle('active', isActive);
+                cache.mobileMenu.classList.toggle('active', isActive);
+                cache.mobileMenuBackdrop.classList.toggle('active', isActive);
+                cache.body.style.overflow = isActive ? 'hidden' : '';
+                cache.hamburgerMenu.setAttribute('aria-expanded', isActive.toString());
+                cache.mobileMenu.setAttribute('aria-hidden', (!isActive).toString());
+
+                if (isActive) {
+                    // Delay focus slightly to allow menu animation
+                    setTimeout(() => {
+                         const firstFocusableElement = cache.mobileMenu.querySelector('a');
+                         if (firstFocusableElement) firstFocusableElement.focus();
+                    }, 100); // Small delay
+                } else {
+                    // Return focus to the previously focused element
+                     if (focusedElementBeforeMenu) {
+                         focusedElementBeforeMenu.focus();
+                         focusedElementBeforeMenu = null; // Reset
+                     } else {
+                        cache.hamburgerMenu.focus(); // Fallback to hamburger
+                     }
+                 }
+            }
+
+            function setupMobileMenu() {
+                 if (!cache.hamburgerMenu || !cache.mobileMenu || !cache.mobileMenuBackdrop) return;
+
+                 cache.hamburgerMenu.addEventListener('click', () => toggleMobileMenu());
+                 cache.mobileMenuBackdrop.addEventListener('click', () => toggleMobileMenu(false));
+
+                 cache.mobileNavLinks.forEach(link => {
+                     link.addEventListener('click', () => toggleMobileMenu(false));
+                 });
+
+                 document.addEventListener('keydown', (e) => {
+                     if (e.key === 'Escape' && cache.mobileMenu.classList.contains('active')) {
+                         toggleMobileMenu(false);
+                     }
+                     // Basic focus trapping (can be enhanced with a library)
+                     if (e.key === 'Tab' && cache.mobileMenu.classList.contains('active')) {
+                        const focusableElements = cache.mobileMenu.querySelectorAll('a');
+                        const firstElement = focusableElements[0];
+                        const lastElement = focusableElements[focusableElements.length - 1];
+
+                        if (e.shiftKey) { // Shift + Tab
+                            if (document.activeElement === firstElement) {
+                                lastElement.focus();
+                                e.preventDefault();
+                            }
+                        } else { // Tab
+                             if (document.activeElement === lastElement) {
+                                firstElement.focus();
+                                e.preventDefault();
+                            }
+                        }
+                     }
+                 });
+            }
+
+            // Set Active Navigation Link (Improved Logic)
+            function setActiveNavLink() {
+                const currentPath = window.location.pathname.replace(/\/$/, '') || '/'; // Normalize current path
+
+                function updateLinks(links) {
+                    links.forEach(link => {
+                        let linkPath;
+                        try {
+                            const linkHref = link.getAttribute('href');
+                            // Handle root links correctly
+                            if (linkHref === '#' || linkHref === '/' || linkHref === './' || linkHref === 'index.html' || linkHref.endsWith('سس.html')) {
+                                linkPath = '/';
+                            } else {
+                                // Normalize link href like current path
+                                const linkUrl = new URL(linkHref, window.location.origin);
+                                linkPath = linkUrl.pathname.replace(/\/$/, '') || '/';
+                            }
+                            link.classList.toggle('active', linkPath === currentPath);
+                        } catch (e) {
+                            // console.warn(`Could not process link: ${link.getAttribute('href')}`, e);
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+
+                if (cache.desktopNavLinks.length > 0) updateLinks(cache.desktopNavLinks);
+                if (cache.mobileNavLinks.length > 0) updateLinks(cache.mobileNavLinks);
+            }
+
+
+            // Initialize Swiper Slider (with error handling)
+            function initSwiper() {
+                if (!cache.featuredSwiperEl || typeof Swiper === 'undefined') {
+                    // console.warn('Swiper element or library not found.');
+                    return;
+                }
+                try {
+                    new Swiper(cache.featuredSwiperEl, {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                        loop: true,
+                        effect: 'fade', // Use fade effect
+                        fadeEffect: { crossFade: true },
+                        autoplay: { delay: 6500, disableOnInteraction: false, pauseOnMouseEnter: true },
+                        pagination: { el: '.swiper-pagination', clickable: true },
+                        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                        a11y: { prevSlideMessage: 'اسلاید قبلی', nextSlideMessage: 'اسلاید بعدی', paginationBulletMessage: 'رفتن به اسلاید {{index}}'},
+                        keyboard: { enabled: true, onlyInViewport: false }, // Allow keyboard nav even when not fully visible
+                        preloadImages: false,
+                        lazy: { loadPrevNext: true, loadOnTransitionStart: true }, // Load faster
+                        watchSlidesProgress: true,
+                    });
+                } catch (e) {
+                    console.error("Error initializing Swiper:", e);
+                }
+            }
+
+            // Initialize Vanilla Tilt Effect (with checks and error handling)
+            function initTilt() {
+                if (cache.tiltCards.length === 0) return; // No cards found
+
+                // Check if library is loaded
+                if (typeof VanillaTilt === 'undefined' || !VanillaTilt || !VanillaTilt.init) {
+                    // console.warn('Vanilla Tilt library not loaded or init function missing.');
+                    // Remove the tilt-card class to prevent potential CSS conflicts if JS fails
+                    cache.tiltCards.forEach(card => card.classList.remove('tilt-card'));
+                    return;
+                }
+
+                 try {
+                    VanillaTilt.init(cache.tiltCards, {
+                        max: 3,         // Reduced max tilt
+                        speed: 700,       // Slightly slower speed
+                        glare: true,
+                        "max-glare": 0.1, // Reduced glare intensity
+                        perspective: 1800, // Increased perspective for more subtlety
+                        scale: 1.015       // Very subtle scale on hover
+                    });
+                } catch (e) {
+                    console.error("Error initializing Vanilla Tilt:", e);
+                    // Optionally remove class on error too
+                    cache.tiltCards.forEach(card => card.classList.remove('tilt-card'));
+                }
+            }
+
+            // Animate Progress Bars on Scroll into View (Improved)
+            function initProgressBars() {
+                if (cache.progressBars.length === 0 || !('IntersectionObserver' in window)) return;
+
+                const observerOptions = { root: null, rootMargin: '0px 0px -40px 0px', threshold: 0.4 }; // Trigger slightly earlier
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const progressBar = entry.target;
+                            // Apply transition via CSS, just trigger the transform change here
+                            progressBar.style.transition = 'transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s'; // Smoother bezier, slight delay
+                            // Transform origin is set in CSS (right for RTL)
+                            progressBar.style.transform = 'scaleX(1)';
+                            obs.unobserve(progressBar); // Stop observing once animated
+                        }
+                    });
+                }, observerOptions);
+
+                cache.progressBars.forEach(bar => {
+                    // Initial state is set via CSS (transform: scaleX(0); transform-origin: right;)
+                    observer.observe(bar);
+                });
+            }
+
+             // Update Current Year in Footer
+             function updateFooterYear() {
+                 if (cache.currentYearSpan) {
+                     const year = new Intl.DateTimeFormat('fa-IR', { year: 'numeric' }).format(new Date());
+                     cache.currentYearSpan.textContent = year; // Display Persian year
+                 }
+             }
+
+            // --- Initialization ---
+            document.addEventListener('DOMContentLoaded', () => {
+                // Early setup
+                setupTheme(); // Set theme ASAP to prevent FOUC
+                handlePreloader(); // Start preloader fade management
+                updateFooterYear();
+
+                // Component initializations
+                setupMobileMenu();
+                setActiveNavLink(); // Set active link after DOM is ready
+                initSwiper();
+                initTilt();
+                initProgressBars(); // Observe progress bars
+
+                // Scroll listener setup (debounced)
+                 const debouncedScrollHandler = debounce(handleScroll, 30); // More frequent debounce check
+                 window.addEventListener('scroll', debouncedScrollHandler, { passive: true });
+                 handleScroll(); // Initial check
+
+                // Scroll Top Button Action
+                if (cache.scrollTopBtn) {
+                    cache.scrollTopBtn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+
+                // Initial setup complete log (optional)
+                // console.log("Hamovie UI Initialized");
+            });
+
+        })(); // End IIFE
+    </script>
+</body>
+</html>
